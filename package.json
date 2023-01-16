@@ -1,6 +1,9 @@
 {
   "name": "monke-x-node",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "monke with node",
   "main": "index.js",
   "scripts": {
