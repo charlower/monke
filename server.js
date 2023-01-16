@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
 // get MongoDB driver connection
@@ -25,6 +26,8 @@ const contentRoutes = require('./routes/content.route');
 app.use('/api/v1/ipfs', ipfsRoutes);
 app.use('/api/v1/user', authRoutes);
 app.use('/api/v1/content', contentRoutes);
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 dbo.connectToServer(function (err) {
   if (err) {
