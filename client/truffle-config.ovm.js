@@ -4,6 +4,7 @@ const path = require('path');
 require('dotenv').config();
 const ganacheMnemonic = process.env['GANACHE_MNEMONIC'];
 const goerliMnemonic = process.env['GOERLI_MNEMONIC'];
+const mainnetMnemonic = process.env['GOERLI_MNEMONIC'];
 const mnemonic = 'test test test test test test test test test test test junk'; // process.env["MNEMONIC"];
 
 const infuraKey = process.env['INFURA_KEY'];
