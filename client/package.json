@@ -1,7 +1,10 @@
 {
   "name": "monke-client",
   "version": "0.1.0",
-  "description": "return to monke",
+  "engines": {
+    "node": "16.x"
+  },
+  "description": "Mint NFT's on Optimism using MONKE",
   "directories": {
     "test": "test"
   },
