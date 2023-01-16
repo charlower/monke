@@ -77,10 +77,6 @@ export const ModalMint = () => {
         const marketNetworkId = await networks[parseInt(chainId)].address;
         const nftNetworkId = await networksNFT[parseInt(chainId)].address;
 
-        console.log('chain', chainId, parseInt(chainId));
-        console.log('market network', marketNetworkId);
-        console.log('nft network', nftNetworkId);
-
         const M1 = new Contract(marketNetworkId, abi, signer);
         const NFT1 = new Contract(nftNetworkId, abiNFT, signer);
 
@@ -157,6 +153,7 @@ export const ModalMint = () => {
     e.preventDefault();
     try {
       if (active && account) {
+        console.log('called');
         setToastMessage('Preparing NFT, please wait.');
         setLoadingData();
         const res = await axios.post('/api/v1/ipfs/upload_file', uploadData);
