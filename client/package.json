@@ -1,6 +1,9 @@
 {
   "name": "monke-client",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "return to monke",
   "directories": {
     "test": "test"
