@@ -161,6 +161,7 @@ export const ModalMint = () => {
         try {
           await MonkeNFTContract.mint(url);
         } catch (err) {
+          console.log('error', err);
           await axios.post('/api/v1/content/delete_file', {
             id: _id,
           });

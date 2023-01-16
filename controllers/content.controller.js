@@ -141,8 +141,6 @@ exports.deleteContent = async (req, res) => {
   const uId = ObjectId(id);
   const dbConnect = dbo.getDb();
   try {
-    console.log(req.body);
-
     const coll = await dbConnect.collection('content');
     const query = { _id: uId };
 
