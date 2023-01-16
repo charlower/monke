@@ -4,7 +4,7 @@
   "engines": {
     "node": "16.x"
   },
-  "description": "return to monke",
+  "description": "Mint NFT's on Optimism using MONKE",
   "directories": {
     "test": "test"
   },
