@@ -11698,7 +11698,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 .nft_comments {
   max-width: 1500px;
-  margin: 3rem auto 8rem;
+  margin: 3rem auto;
   background: rgba(0, 0, 0, 0.2117647059);
   padding: 1rem;
   border-radius: 1rem;

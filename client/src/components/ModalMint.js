@@ -153,7 +153,6 @@ export const ModalMint = () => {
     e.preventDefault();
     try {
       if (active && account) {
-        console.log('called');
         setToastMessage('Preparing NFT, please wait.');
         setLoadingData();
         const res = await axios.post('/api/v1/ipfs/upload_file', uploadData);

@@ -15,6 +15,7 @@ const View = () => {
         left: 80,
         width: 'calc(100% - 80px)',
         marginLeft: isSidebarOpen ? 240 : 0,
+        paddingBottom: 1,
       }}
     >
       <Switch>
