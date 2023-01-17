@@ -74,8 +74,7 @@ const TopNav = () => {
             />
             {isSearching && (
               <span
-                className='spinner-border spinner-border-sm text-light ms-auto position-absolute'
-                style={{ top: 10, right: 95 }}
+                className='spinner-border search-spinner spinner-border-sm text-light ms-auto position-absolute'
                 role='status'
               />
             )}

@@ -55,6 +55,7 @@ View
 Loader
 Nft
 Lightbox
+Spinner
 */
 
 // Side menu button
@@ -663,5 +664,16 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     img {
       opacity: 1;
     }
+  }
+}
+
+//Spinner
+.search-spinner {
+  top: 10px;
+  right: 95px;
+}
+@media(max-width: 500px){
+  .search-spinner {
+    right: 10px;
   }
 }
