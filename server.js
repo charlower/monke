@@ -3,10 +3,22 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
+const env = process.env.NODE_ENV || 'development';
 // get MongoDB driver connection
 const dbo = require('./db/conn');
 
 const app = express();
+
+var forceSsl = function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  return next();
+};
+
+if (env === 'production') {
+  app.use(forceSsl);
+}
 
 app.use(cors());
 app.use(express.json());
