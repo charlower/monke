@@ -2,24 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+const enforce = require('express-sslify');
 require('dotenv').config();
-const env = process.env.NODE_ENV || 'development';
 // get MongoDB driver connection
 const dbo = require('./db/conn');
 
 const app = express();
-
-var forceSsl = function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''));
-  }
-  return next();
-};
-
-if (env === 'production') {
-  app.use(forceSsl);
-}
-
+app.use(enforce.HTTPS());
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('./uploads'));
