@@ -11130,6 +11130,7 @@ View
 Loader
 Nft
 Lightbox
+Spinner
 */
 #curved-corner-top {
   width: 10px;
@@ -11787,4 +11788,15 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 .light-box_open img {
   opacity: 1;
+}
+
+.search-spinner {
+  top: 10px;
+  right: 95px;
+}
+
+@media (max-width: 500px) {
+  .search-spinner {
+    right: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
