@@ -8,10 +8,10 @@ require('dotenv').config();
 const dbo = require('./db/conn');
 
 const app = express();
-app.use(enforce.HTTPS());
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('./uploads'));
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 const port = process.env.PORT || 5000;
 
