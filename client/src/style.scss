@@ -215,6 +215,11 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   outline: none;
 }
 
+.navbar-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px)
+}
+
 // Top menu
 .search-input {
   max-width: 505px;
