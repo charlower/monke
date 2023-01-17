@@ -11111,8 +11111,8 @@ body {
 }
 
 .btn {
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
 }
 
 .btn-bg {
@@ -11317,6 +11317,11 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   outline: none;
 }
 
+.navbar-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .search-input {
   max-width: 505px;
   width: calc(100% - 85px);
@@ -11409,8 +11414,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   border-radius: 1rem;
   background: rgba(0, 0, 0, 0.5);
   margin-bottom: 1.5rem;
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   color: rgb(248, 249, 250);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -11536,8 +11541,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 .modal {
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
 }
 
 .view-container {
@@ -11698,7 +11703,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 .nft_comments {
   max-width: 1500px;
-  margin: 3rem auto;
+  margin: 3rem auto 8rem;
   background: rgba(0, 0, 0, 0.2117647059);
   padding: 1rem;
   border-radius: 1rem;
@@ -11760,8 +11765,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   width: 100vw;
   transition: all 0.4s ease;
   background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
   -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11777,8 +11782,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 .light-box_open {
   background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 .light-box_open img {
   opacity: 1;
