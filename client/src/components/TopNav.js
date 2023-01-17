@@ -53,12 +53,11 @@ const TopNav = () => {
     <>
       <ModalMint />
       <nav
-        className='navbar navbar-expand-sm navbar-light py-4 px-4 px-sm-5 bg-light bg-transparent position-fixed'
+        className='navbar navbar-expand-sm navbar-blur navbar-light py-4 px-4 px-sm-5 bg-light bg-transparent position-fixed'
         style={{
           width: 'calc(100% - 80px)',
           left: 80,
           zIndex: 2,
-          backdropFilter: 'blur(10px)',
         }}
       >
         <div className='container-fluid p-0'>
