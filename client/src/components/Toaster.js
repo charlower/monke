@@ -47,7 +47,8 @@ export const ToastNotification = () => {
       // toggle
       error ? bsToast.show() : bsToast.hide();
     }
-  });
+  }, [error]);
+
   return (
     <>
       <div
