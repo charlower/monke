@@ -4,6 +4,8 @@ const path = require('path');
 const cors = require('cors');
 const enforce = require('express-sslify');
 require('dotenv').config();
+const env = process.env.NODE_ENV || 'development';
+
 // get MongoDB driver connection
 const dbo = require('./db/conn');
 
@@ -11,7 +13,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('./uploads'));
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
+if (env === 'production') {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
 
 const port = process.env.PORT || 5000;
 
