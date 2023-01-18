@@ -2,6 +2,7 @@ const path = require('path');
 
 require('dotenv').config();
 const goerliMnemonic = process.env['GOERLI_MNEMONIC'];
+const mainnetMnemonic = process.env['MAINNET_MNEMONIC'];
 const infuraKey = process.env['INFURA_KEY'];
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -47,6 +48,18 @@ module.exports = {
     //   port: 9545,
     //   gasPrice: 0,
     // },
+    ethereum: {
+      network_id: 1,
+      chain_id: 1,
+      provider: function () {
+        return new HDWalletProvider(
+          mainnetMnemonic,
+          'https://mainnet.infura.io/v3/' + infuraKey,
+          0,
+          1
+        );
+      },
+    },
     // UNCOMMENT TO USE GOERLI NETWORK
     // Currently, VSCode Extension debugger fails with "truffle-config.js" has incorrect format
     // due to the usage of HDWalletProvider
