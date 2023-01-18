@@ -10,8 +10,8 @@ import { useToast } from '../slices/toastSlice';
 import { useWeb3React } from '@web3-react/core';
 import { Contract } from '@ethersproject/contracts';
 import { parseUnits } from '@ethersproject/units';
-import MonkeMarketplace from '../contracts/optimism-contracts/MonkeMarketplace.json';
-import MonkeNFT from '../contracts/optimism-contracts/MonkeNFT.json';
+import MonkeMarketplace from '../contracts/ethereum-contracts/MonkeMarketplace.json';
+import MonkeNFT from '../contracts/ethereum-contracts/MonkeNFT.json';
 import { eth_usd as returnEthUsd } from '../helpers/utilities';
 
 import watermark from '../img/monke-watermark.svg';

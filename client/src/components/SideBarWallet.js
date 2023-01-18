@@ -147,7 +147,7 @@ const SideBarWallet = () => {
                 style={{ fontSize: 12, maxWidth: 155 }}
                 className='font-monospace text-secondary text-center text-break align-self-center m-1'
               >
-                Please connect to the Optimism network
+                Please connect to the Ethereum network
               </small>
             </>
           )

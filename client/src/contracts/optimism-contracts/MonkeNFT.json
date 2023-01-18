@@ -10177,12 +10177,12 @@
     "420": {
       "events": {},
       "links": {},
-      "address": "0x6E85643349fcd46d49BC6E6021Bc41137eB7515d",
-      "transactionHash": "0x50a863eb5ad8f1ba4c5e239ec76016de9b4c4d4b7105ca91883529e690ce27da"
+      "address": "0x67b56C630Ec909F4691B561fcC05f5AA9966c513",
+      "transactionHash": "0x81db2f41f3c8da8538393c13d41525a8f3cf6f513227ecb19c4f8a0286553fab"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-01-17T23:50:03.193Z",
+  "updatedAt": "2023-01-18T01:08:05.195Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
