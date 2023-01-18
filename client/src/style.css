@@ -11138,7 +11138,7 @@ Spinner
   background-image: radial-gradient(circle at 0 0, transparent 0%, transparent 10px, #3d3f50 10px);
   position: absolute;
   right: 0px;
-  top: 460px;
+  top: 461px;
   z-index: 2;
 }
 
@@ -11148,7 +11148,7 @@ Spinner
   background-image: radial-gradient(circle at 0 100%, transparent 0%, transparent 10px, #3d3f50 10px);
   position: absolute;
   right: 0;
-  top: 506px;
+  top: 505px;
   z-index: 2;
 }
 
