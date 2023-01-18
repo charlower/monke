@@ -34,6 +34,10 @@ app.use('/api/v1/content', contentRoutes);
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 dbo.connectToServer(function (err) {
   if (err) {
     console.error(err);
