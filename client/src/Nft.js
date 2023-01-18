@@ -72,8 +72,9 @@ const Nft = () => {
   });
 
   useEffect(() => {
-    const queryString = window.location.search;
-    const id = queryString.split('?id=')[1];
+    const queryString = window.location.hash;
+    const id = queryString.split('#/nft?id=')[1];
+
     if (cards.length > 0) {
       // eslint-disable-next-line
       cards.find((el) => {

@@ -4,7 +4,7 @@ import SideBar from './components/SideBar';
 import TopNav from './components/TopNav';
 import View from './View';
 import { ToastNotification } from './components/Toaster';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 import { Web3ReactProvider } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';
