@@ -88,9 +88,6 @@ export const Card = ({
               {timeDifference(dateCreated)}
             </small>
           </div>
-          <small>
-            {/* {units === 0 ? 1 : units} Unit{units > 1 && 's'} */}
-          </small>
         </div>
       </div>
     </div>
@@ -115,7 +112,7 @@ export const CardLoading = () => {
           {/* lower */}
           <div className='card__body-lower'>
             <div className='card__body-lower-stake'>
-              <div className='card__body-lower-stake-container'>
+              <div className='card__body-lower-stake-container w-100'>
                 <div className='card-loading-s' />
                 <div className='card-loading-m mt-4' />
                 <div className='card-loading-s' style={{ marginTop: 12 }} />
