@@ -388,7 +388,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     &-s {
       border-radius: 3px;
       height: 15px;
-      width: 200px;
+      max-width: 200px;
+      width: 100%;
       background: linear-gradient(
         90deg,
         rgba(255, 255, 255, 0.2),
