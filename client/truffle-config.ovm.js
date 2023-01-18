@@ -64,7 +64,7 @@ module.exports = {
     optimistic_goerli: {
       network_id: 420,
       chain_id: 420,
-      gas: 25000000,
+      gas: 5000000,
       provider: function () {
         return new HDWalletProvider(
           goerliMnemonic,
