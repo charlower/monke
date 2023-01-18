@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import _debounce from 'lodash/debounce';
 import { Card, CardLoading } from './components/Card';
 import { LoaderLogo } from './components/LoaderLogo';
 import { useLoading } from './slices/loadingSlice';
@@ -15,7 +16,8 @@ const Feed = () => {
   const [isFetching, setIsFetching] = useState(false);
 
   const scrollLoad = () => {
-    const scrollPoint = scrollRef.current?.getBoundingClientRect().bottom - 0.5;
+    const scrollPoint =
+      scrollRef.current?.getBoundingClientRect().bottom - 0.05;
 
     if (
       scrollPoint < window.innerHeight ||
@@ -52,6 +54,8 @@ const Feed = () => {
   useEffect(() => {
     if (isFetching === true) {
       getCards();
+      // eslint-disable-next-line
+      _debounce(getCards, 300);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFetching]);
