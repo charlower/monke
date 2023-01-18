@@ -619,13 +619,15 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
       }
     }
     @media(max-width: 1200px){
+      flex-direction: column-reverse;
       &-image {
-        width: 100%
+        width: 100%;
+        margin-top: 0.75rem;
       }
       &_details {
         width: 100%;
         max-width: 700px;
-        margin-top: 2rem;
+        margin-top: 0.5rem;
       }
       flex-wrap: wrap;
     }

@@ -11743,15 +11743,17 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 @media (max-width: 1200px) {
   .nft {
+    flex-direction: column-reverse;
     flex-wrap: wrap;
   }
   .nft-image {
     width: 100%;
+    margin-top: 0.75rem;
   }
   .nft_details {
     width: 100%;
     max-width: 700px;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
   }
 }
 
