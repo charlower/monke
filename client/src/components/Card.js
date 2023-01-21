@@ -50,8 +50,8 @@ export const Card = ({
             <video
               className='web-m-video'
               style={{ borderRadius: 15 }}
-              controls
-              playsInline
+              controls={true}
+              playsInline={true}
             >
               <source src={imgSrc} type='video/webm' />
               <p>
