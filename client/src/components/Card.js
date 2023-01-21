@@ -45,7 +45,7 @@ export const Card = ({
             />
           )}
           {type === 'video/webm' && (
-            <div className='card__img'>
+            <div className='card__img d-flex align-items-center justify-content-center'>
               <video
                 className='web-m-video'
                 style={{ borderRadius: 15 }}
