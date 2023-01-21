@@ -18,6 +18,8 @@ export const Card = ({
   type,
 }) => {
   const [ethUsd, setEthUsd] = useState();
+  const [isIOS, setIsIOS] = useState(false);
+
   let svg = createAvatar(style, {
     seed: avatar,
     dataUri: true,
@@ -30,6 +32,19 @@ export const Card = ({
       setEthUsd(ethUsd.data?.data.rates.USD);
     }
     fetchEthUsd();
+
+    const isIOS =
+      [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod',
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes('Mac') && 'ontouchend' in document);
+    setIsIOS(isIOS);
   }, []);
 
   return (
@@ -45,7 +60,7 @@ export const Card = ({
             />
           </NavLink>
         )}
-        {type === 'video/webm' && (
+        {type === 'video/webm' && !isIOS && (
           <div className='card__img d-flex align-items-center justify-content-center'>
             <video
               className='web-m-video'
@@ -59,6 +74,14 @@ export const Card = ({
                 <a href={imgSrc}>link to the video</a> instead.
               </p>
             </video>
+          </div>
+        )}
+        {type === 'video/webm' && isIOS && (
+          <div className='card__img d-flex align-items-center justify-content-center'>
+            <p style={{ padding: '0 2rem' }}>
+              Sorry, we dont support WEBM on iOS. Browse MONKE on a desktop or
+              android device. <a href={imgSrc}>Heres a link to the video</a>.
+            </p>
           </div>
         )}
         <div className='card__body'>

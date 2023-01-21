@@ -50,7 +50,7 @@ const Nft = () => {
   const [c2a, setC2a] = useState('');
   const [comment, setComment] = useState();
   const [commentLoading, setCommentLoading] = useState(false);
-  // const [contentType, setContentType] = useState('');
+  const [isIOS, setIsIOS] = useState(false);
   const context = useWeb3React();
   const { token, userName: commenterName } = useAuth();
   const { account } = context;
@@ -76,7 +76,18 @@ const Nft = () => {
   useEffect(() => {
     const queryString = window.location.hash;
     const id = queryString.split('#/nft?id=')[1];
-
+    const isIOS =
+      [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod',
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes('Mac') && 'ontouchend' in document);
+    setIsIOS(isIOS);
     if (cards.length > 0) {
       // eslint-disable-next-line
       cards.find((el) => {
@@ -135,7 +146,7 @@ const Nft = () => {
               />
             </LightBox>
           )}
-          {ipfsHash && type === 'video/webm' && (
+          {ipfsHash && type === 'video/webm' && !isIOS && (
             <video className='web-m-video' controls={true} playsInline={true}>
               <source
                 src={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
@@ -149,6 +160,18 @@ const Nft = () => {
                 instead.
               </p>
             </video>
+          )}
+          {type === 'video/webm' && isIOS && (
+            <div className='card__img d-flex align-items-center justify-content-center'>
+              <p style={{ padding: '0 2rem', color: '#f8f9fa' }}>
+                Sorry, we dont support WEBM on iOS. Browse MONKE on a desktop or
+                android device.{' '}
+                <a href={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}>
+                  Heres a link to the video
+                </a>
+                .
+              </p>
+            </div>
           )}
         </div>
         <div className='nft_details'>
