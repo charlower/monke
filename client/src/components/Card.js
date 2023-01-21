@@ -35,31 +35,32 @@ export const Card = ({
   return (
     <div className='col-12 col-md-6 col-lg-4'>
       <div className='card' to='/nft'>
-        <NavLink to={`/nft?id=${_id}`}>
-          {type !== 'video/webm' && (
+        {type !== 'video/webm' && (
+          <NavLink to={`/nft?id=${_id}`}>
             <div
               className='card__img'
               style={{
                 backgroundImage: `url(${imgSrc})`,
               }}
             />
-          )}
-          {type === 'video/webm' && (
-            <div className='card__img d-flex align-items-center justify-content-center'>
-              <video
-                className='web-m-video'
-                style={{ borderRadius: 15 }}
-                controls
-              >
-                <source src={imgSrc} type='video/webm' />
-                <p>
-                  Your browser doesn't support HTML video. Here is a
-                  <a href={imgSrc}>link to the video</a> instead.
-                </p>
-              </video>
-            </div>
-          )}
-        </NavLink>
+          </NavLink>
+        )}
+        {type === 'video/webm' && (
+          <div className='card__img d-flex align-items-center justify-content-center'>
+            <video
+              className='web-m-video'
+              style={{ borderRadius: 15 }}
+              controls
+              playsInline
+            >
+              <source src={imgSrc} type='video/webm' />
+              <p>
+                Your browser doesn't support HTML video. Here is a
+                <a href={imgSrc}>link to the video</a> instead.
+              </p>
+            </video>
+          </div>
+        )}
         <div className='card__body'>
           {/* header */}
           <NavLink className='text-decoration-none' to={`/nft?id=${_id}`}>

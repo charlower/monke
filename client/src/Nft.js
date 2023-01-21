@@ -136,7 +136,7 @@ const Nft = () => {
             </LightBox>
           )}
           {ipfsHash && type === 'video/webm' && (
-            <video className='web-m-video' controls>
+            <video className='web-m-video' controls playsInline>
               <source
                 src={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
                 type='video/webm'
