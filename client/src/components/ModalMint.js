@@ -34,6 +34,7 @@ export const ModalMint = () => {
   const [uploadData, setUploadData] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
   const [fileName, setFileName] = useState(null);
+  const [fileType, setFileType] = useState(null);
   const [formInputs, setFormInputs] = useState({
     title: '',
     description: '',
@@ -63,6 +64,7 @@ export const ModalMint = () => {
     e.preventDefault();
     const file = e.target.files[0];
     setFileName(file.name);
+    setFileType(file.type);
     setPreviewImage(URL.createObjectURL(file));
     const formData = new FormData();
     formData.append('file', file);
@@ -149,6 +151,7 @@ export const ModalMint = () => {
 
     uploadData.append('formInputData', JSON.stringify(formInputData));
     uploadData.append('walletAddress', account);
+    uploadData.append('type', fileType);
 
     e.preventDefault();
     try {

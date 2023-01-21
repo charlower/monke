@@ -56,6 +56,7 @@ Loader
 Nft
 Lightbox
 Spinner
+Webm
 */
 
 // Side menu button
@@ -680,4 +681,12 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   .search-spinner {
     right: 10px;
   }
+}
+
+//Webm
+
+.web-m-video {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
 }

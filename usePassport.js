@@ -10,7 +10,6 @@ const usePassport = (passport) => {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {
       const dbConnect = dbo.getDb();
-      console.log(jwt_payload);
       dbConnect
         .collection('users')
         .findOne({ walletAddress: jwt_payload.address })

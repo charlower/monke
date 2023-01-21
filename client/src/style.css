@@ -11131,6 +11131,7 @@ Loader
 Nft
 Lightbox
 Spinner
+Webm
 */
 #curved-corner-top {
   width: 10px;
@@ -11803,4 +11804,9 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   .search-spinner {
     right: 10px;
   }
+}
+.web-m-video {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
 }/*# sourceMappingURL=style.css.map */
