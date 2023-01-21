@@ -43,13 +43,12 @@ exports.uploadContent = async (req, res) => {
       description: req.body.description,
       tags: req.body.tags,
       ipfsHash: req.body.IpfsHash,
+      type: req.body.type,
       date: Date.now(),
       mintedBy: req.body.walletAddress,
       nftCost: req.body.nftCost,
       comments: [],
     };
-
-    console.log('content doc', contentDocument);
 
     await dbConnect.collection('content').insertOne(contentDocument);
 

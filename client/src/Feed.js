@@ -79,6 +79,7 @@ const Feed = () => {
             desc={card.description}
             cost={card.nftCost}
             dateCreated={card.date}
+            type={card.type}
             imgSrc={`https://gateway.pinata.cloud/ipfs/${card.ipfsHash}`}
           />
         ))}

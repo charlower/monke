@@ -50,6 +50,7 @@ const Nft = () => {
   const [c2a, setC2a] = useState('');
   const [comment, setComment] = useState();
   const [commentLoading, setCommentLoading] = useState(false);
+  // const [contentType, setContentType] = useState('');
   const context = useWeb3React();
   const { token, userName: commenterName } = useAuth();
   const { account } = context;
@@ -62,6 +63,7 @@ const Nft = () => {
     nftCost,
     mintedBy,
     userName,
+    type,
     comments,
   } = data;
   const { cards } = useContent();
@@ -125,13 +127,28 @@ const Nft = () => {
     <>
       <div className='nft align-items-center d-flex gap-4'>
         <div className='nft-image'>
-          {ipfsHash && (
+          {ipfsHash && type !== 'video/webm' && (
             <LightBox src={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}>
               <img
                 alt='nft'
                 src={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
               />
             </LightBox>
+          )}
+          {ipfsHash && type === 'video/webm' && (
+            <video className='web-m-video' controls>
+              <source
+                src={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}
+                type='video/webm'
+              />
+              <p>
+                Your browser doesn't support HTML video. Here is a
+                <a href={`https://gateway.pinata.cloud/ipfs/${ipfsHash}`}>
+                  link to the video
+                </a>{' '}
+                instead.
+              </p>
+            </video>
           )}
         </div>
         <div className='nft_details'>

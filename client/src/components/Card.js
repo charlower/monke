@@ -15,6 +15,7 @@ export const Card = ({
   cost,
   dateCreated,
   imgSrc,
+  type,
 }) => {
   const [ethUsd, setEthUsd] = useState();
   let svg = createAvatar(style, {
@@ -35,26 +36,45 @@ export const Card = ({
     <div className='col-12 col-md-6 col-lg-4'>
       <div className='card' to='/nft'>
         <NavLink to={`/nft?id=${_id}`}>
-          <div
-            className='card__img'
-            style={{
-              backgroundImage: `url(${imgSrc})`,
-            }}
-          />
+          {type !== 'video/webm' && (
+            <div
+              className='card__img'
+              style={{
+                backgroundImage: `url(${imgSrc})`,
+              }}
+            />
+          )}
+          {type === 'video/webm' && (
+            <div className='card__img'>
+              <video
+                className='web-m-video'
+                style={{ borderRadius: 15 }}
+                controls
+              >
+                <source src={imgSrc} type='video/webm' />
+                <p>
+                  Your browser doesn't support HTML video. Here is a
+                  <a href={imgSrc}>link to the video</a> instead.
+                </p>
+              </video>
+            </div>
+          )}
         </NavLink>
         <div className='card__body'>
           {/* header */}
-          <div className='card__body-header'>
-            <div className='card__body-header-info'>
-              <p>{title}</p>
-              <small>@{author !== undefined ? author : 'anonymous'}</small>
-            </div>
-            <div className='card__body-header-avatar'>
-              <div className='rounded bg-secondary bg-gradient p-1 shadow'>
-                <img alt='avatar' src={svg} />
+          <NavLink className='text-decoration-none' to={`/nft?id=${_id}`}>
+            <div className='card__body-header'>
+              <div className='card__body-header-info'>
+                <p>{title}</p>
+                <small>@{author !== undefined ? author : 'anonymous'}</small>
+              </div>
+              <div className='card__body-header-avatar'>
+                <div className='rounded bg-secondary bg-gradient p-1 shadow'>
+                  <img alt='avatar' src={svg} />
+                </div>
               </div>
             </div>
-          </div>
+          </NavLink>
           {/* lower */}
           <div className='card__body-lower'>
             <p>{desc}</p>

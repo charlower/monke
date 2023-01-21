@@ -11,6 +11,7 @@ const contentDataSchema = Joi.object({
   description: description.required(),
   tags: tags,
   nftCost: stakeAmount.required(),
+  type: Joi.string(),
 });
 
 //USER SCHEMA

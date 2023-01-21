@@ -55,7 +55,7 @@ module.exports = (useJoiError = false) => {
               name: pinataSubmitData.title,
               keyvalues: { description: pinataSubmitData.description },
             });
-            const { walletAddress } = req.body;
+            const { walletAddress, type } = req.body;
             const data = new FormData();
             await data.append('pinataMetadata', pinataMetadata);
             await data.append('pinataOptions', pinataOptions);
@@ -84,6 +84,7 @@ module.exports = (useJoiError = false) => {
               ...valid,
               ...pinataData,
               walletAddress,
+              type,
             };
           } else {
             // Validating user input
